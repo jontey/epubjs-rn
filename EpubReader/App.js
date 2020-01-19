@@ -20,8 +20,8 @@ class EpubReader extends Component {
     super(props);
     this.state = {
       flow: "paginated", // paginated || scrolled-continuous
-      location: 6,
-      url: "https://s3.amazonaws.com/epubjs/books/moby-dick.epub",
+      location: 1,
+      url: "https://contendingforthefaith.org/books/epub/genuine-believers/genuine-believers.epub",
       src: "",
       origin: "",
       title: "",
@@ -38,6 +38,7 @@ class EpubReader extends Component {
     this.streamer.start()
       .then((origin) => {
         this.setState({origin})
+        console.log('Fetching epub', this.state.url)
         return this.streamer.get(this.state.url);
       })
       .then((src) => {
@@ -73,7 +74,7 @@ class EpubReader extends Component {
                 this.setState({visibleLocation});
               }}
               onLocationsReady={(locations)=> {
-                // console.log("location total", locations.total);
+                console.log("location total", locations.total);
                 this.setState({sliderDisabled : false});
               }}
               onReady={(book)=> {

@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@react-native-community/slider": "^1.1.4",
-    "epubjs-rn": "file:./epubjs-rn.r17.tgz",
+    "epubjs-rn": "^0.1.5",
     "react": "16.8.3",
     "react-native": "0.59.9",
     "react-native-vector-icons": "^6.6.0"
